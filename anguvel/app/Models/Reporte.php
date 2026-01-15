@@ -16,19 +16,18 @@ class Reporte extends Model
 
     protected $fillable = [
         //
-        'nacimiento',
-        'defuncion',
-        'matrimonios',
-        'usuario_id',
-        //
-        'impuestos',
-        'arbitrios',
+        'id_informacion_publica',
+        
         //
         'titulos',
         'licencias',
+        'reclamos',
         //
+        'arbitrios',
         'multas',
         'otro',
+        //
+        'usuario_id',
     ];
     
     
@@ -38,9 +37,4 @@ class Reporte extends Model
         return $this->belongsTo(Usuario::class, 'id_usuario');
     }
     
-    // Relacion con impuesto
-    public function Impuestos()
-    {
-        return $this->hasMany(Impuesto::class, 'id_sistema');
-    }
 }

@@ -15,8 +15,9 @@ class Usuario extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'dni',
         'nombre',
-        'contra',
+        'contrasena',
     ];
 
 
