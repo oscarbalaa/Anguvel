@@ -31,5 +31,14 @@ class Consulta_Proyecto extends Model
         'razon_social',
         'nombre_supervisor',
 
+        // evidencia fotos, antes durante y finalizada el proyecto
+        'foto_antes',
+        'foto_durante',
+        'foto_finalizada',
+        /** */
+        'fecha_antes_obra',
+        'fecha_durante_obra',
+        'fecha_finalizada_obra',
+
     ];
 }
