@@ -19,14 +19,14 @@ export class App implements OnInit {
   private readonly apiService = inject(ApiService);
 
   ngOnInit(): void {
-    this.apiService.getDatos().subscribe({
+    this.apiService.getConsultaProyectos().subscribe({
       next: (response) => {
         this.data.set(response);
-        console.log('Datos recibidos:', response);
+        console.log('Datos de Consulta Proyectos recibidos:', response);
       },
       error: (err) => {
         this.error.set(err);
-        console.error('Error al obtener los datos:', err);
+        console.error('Error al obtener datos de Consulta Proyectos:', err);
       }
     });
   }
