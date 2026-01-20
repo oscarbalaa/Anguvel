@@ -42,5 +42,15 @@ class Tramites_Licencias extends Model
         'enlace_pdf',
     ];
 
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'id_tramites_licencias';
+    }
+
 
 }

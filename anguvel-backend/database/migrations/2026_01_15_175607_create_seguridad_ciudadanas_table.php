@@ -11,9 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('seguridad_ciudadanas', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('seguridad_ciudadana', function (Blueprint $table) {
+            $table->increments('id_seguridad_ciudadana');
+            $table->unsignedInteger('id_usuario');
+            $table->string('ubicacion', 255);
+            $table->string('tipo_riesgo', 100);
+            $table->date('fecha_riesgo');
+            $table->time('hora_riesgo');
+            $table->text('descripcion');
+            $table->string('nombre_entidad', 100)->nullable();
+            $table->string('direccion', 255)->nullable();
+            $table->string('telefono', 20)->nullable();
+            $table->string('correo', 100)->nullable();
+            $table->string('ubicacion_riesgo', 255)->nullable();
         });
     }
 
@@ -22,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('seguridad_ciudadanas');
+        Schema::dropIfExists('seguridad_ciudadana');
     }
 };

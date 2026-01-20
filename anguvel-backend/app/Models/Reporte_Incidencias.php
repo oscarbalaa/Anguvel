@@ -32,4 +32,14 @@ class Reporte_Incidencias extends Model
         'fecha_inicio',
         'fecha_fin',
     ];
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'id_reporte_incidencia';
+    }
 }

@@ -36,4 +36,14 @@ class Gestion_Tributaria_Pagos extends Model
         'descuento_aplicado',
         'vigencia_beneficio',
     ];
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'id_gestion_tributaria_pago';
+    }
 }

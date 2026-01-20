@@ -29,11 +29,18 @@ class Seguridad_Ciudadana extends Model
         'correo',
 
         // zona de riesgo, mapa con alerta de seguridad recientes
-        'tipo_riesgo',
         'ubicacion_riesgo',
-        'hora_riesgo',
-        'fecha_riesgo'
     ];
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'id_seguridad_ciudadana';
+    }
 
 
 

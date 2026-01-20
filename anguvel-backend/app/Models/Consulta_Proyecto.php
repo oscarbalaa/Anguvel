@@ -41,4 +41,14 @@ class Consulta_Proyecto extends Model
         'fecha_finalizada_obra',
 
     ];
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'id_consulta_proyecto';
+    }
 }
