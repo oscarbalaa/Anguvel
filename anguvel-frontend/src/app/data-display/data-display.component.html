@@ -13,7 +13,7 @@
 
   <div *ngIf="!loading && !error && data.length > 0" class="data-table-container">
     <h3>{{ selectedResource | titlecase }} Data</h3>
-    <table>
+    <table border="1">
       <thead>
         <tr>
           <th *ngFor="let key of (data[0] | keyvalue)">{{ key.key?.toString() | titlecase }}</th>
