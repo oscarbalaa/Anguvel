@@ -22,6 +22,10 @@ export class ApiService {
     return this.http.get<any>(`${this.apiUrl}/datos`);
   }
 
+  public getAll(resource: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/${resource}`);
+  }
+
   // Aquí puedes añadir más métodos para otras operaciones (POST, PUT, DELETE, etc.)
   // Por ejemplo:
   //

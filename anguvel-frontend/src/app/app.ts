@@ -1,33 +1,91 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { ApiService } from './api.service';
-
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, CommonModule],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
-})
-export class App implements OnInit {
-  protected readonly title = signal('anguvel-frontend');
-  
-  protected readonly data = signal<any | null>(null);
-  protected readonly error = signal<any | null>(null);
-
-  private readonly apiService = inject(ApiService);
-
-  ngOnInit(): void {
-    this.apiService.getConsultaProyectos().subscribe({
-      next: (response) => {
-        this.data.set(response);
-        console.log('Datos de Consulta Proyectos recibidos:', response);
-      },
-      error: (err) => {
-        this.error.set(err);
-        console.error('Error al obtener datos de Consulta Proyectos:', err);
-      }
-    });
-  }
-}
+[{
+	"resource": "/C:/Anguvel/anguvel-frontend/src/app/app.ts",
+	"owner": "typescript",
+	"code": "2307",
+	"severity": 8,
+	"message": "Cannot find module '@angular/core' or its corresponding type declarations.",
+	"source": "ts",
+	"startLineNumber": 1,
+	"startColumn": 51,
+	"endLineNumber": 1,
+	"endColumn": 66,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/C:/Anguvel/anguvel-frontend/src/app/app.ts",
+	"owner": "typescript",
+	"code": "2307",
+	"severity": 8,
+	"message": "Cannot find module '@angular/router' or its corresponding type declarations.",
+	"source": "ts",
+	"startLineNumber": 2,
+	"startColumn": 30,
+	"endLineNumber": 2,
+	"endColumn": 47,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/C:/Anguvel/anguvel-frontend/src/app/app.ts",
+	"owner": "typescript",
+	"code": "2307",
+	"severity": 8,
+	"message": "Cannot find module '@angular/common' or its corresponding type declarations.",
+	"source": "ts",
+	"startLineNumber": 3,
+	"startColumn": 30,
+	"endLineNumber": 3,
+	"endColumn": 47,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/C:/Anguvel/anguvel-frontend/src/app/app.ts",
+	"owner": "typescript",
+	"code": "2354",
+	"severity": 8,
+	"message": "This syntax requires an imported helper but module 'tslib' cannot be found.",
+	"source": "ts",
+	"startLineNumber": 6,
+	"startColumn": 1,
+	"endLineNumber": 12,
+	"endColumn": 3,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/C:/Anguvel/anguvel-frontend/src/app/app.ts",
+	"owner": "typescript",
+	"code": "7006",
+	"severity": 8,
+	"message": "Parameter 'response' implicitly has an 'any' type.",
+	"source": "ts",
+	"startLineNumber": 23,
+	"startColumn": 14,
+	"endLineNumber": 23,
+	"endColumn": 22,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/C:/Anguvel/anguvel-frontend/src/app/app.ts",
+	"owner": "typescript",
+	"code": "7006",
+	"severity": 8,
+	"message": "Parameter 'err' implicitly has an 'any' type.",
+	"source": "ts",
+	"startLineNumber": 27,
+	"startColumn": 15,
+	"endLineNumber": 27,
+	"endColumn": 18,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Anguvel/anguvel-frontend/tsconfig.app.json",
+	"owner": "typescript",
+	"severity": 8,
+	"message": "Cannot find type definition file for 'node'.\n  The file is in the program because:\n    Entry point of type library 'node' specified in compilerOptions",
+	"source": "ts",
+	"startLineNumber": 1,
+	"startColumn": 1,
+	"endLineNumber": 1,
+	"endColumn": 2,
+	"modelVersionId": 1,
+	"origin": "extHost1"
+}]
