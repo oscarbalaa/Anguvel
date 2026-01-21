@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive, Router } from '@angular/router'; // Import Router
+import { AuthService } from '../auth/auth.service'; // Import AuthService
+import { Subscription } from 'rxjs'; // Import Subscription
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy { // Implement OnInit and OnDestroy
   appName = 'Municipalidad de Nuevo Chimbote';
   navItems = [
     { label: 'Inicio', path: '/' },
@@ -18,6 +20,26 @@ export class HeaderComponent {
     { label: 'Seguridad Ciudadana', path: '/seguridad-ciudadana' },
     { label: 'Reporte de Incidencias', path: '/reporte-incidencias' },
     { label: 'Consultas de Proyectos', path: '/consultas-proyectos' },
-    { label: 'Usuarios', path: '/usuarios' },
   ];
+
+  isAuthenticated: boolean = false;
+  private authSubscription: Subscription = new Subscription();
+
+  constructor(private authService: AuthService, private router: Router) { } // Inject AuthService and Router
+
+  ngOnInit(): void {
+    this.authSubscription = this.authService.isAuthenticated$.subscribe(
+      (status) => {
+        this.isAuthenticated = status;
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.authSubscription.unsubscribe();
+  }
+
+  onLogout(): void {
+    this.authService.logout();
+  }
 }

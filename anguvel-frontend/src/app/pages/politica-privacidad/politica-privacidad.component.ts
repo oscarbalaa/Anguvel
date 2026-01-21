@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
     <div class="page-container">
       <h2>Política de Privacidad</h2>
       <p>
-        La Municipalidad de Anguvel se compromete a proteger la privacidad de sus usuarios.
+        La Municipalidad de Nuevo Chimbote se compromete a proteger la privacidad de sus usuarios.
         Esta política describe cómo recopilamos, usamos y protegemos su información personal.
       </p>
 

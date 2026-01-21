@@ -10,9 +10,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  currentYear = new Date().getFullYear();
+  currentYear = new Date().getFullYear(); // obtenemos el año actual
   municipalityName = 'Municipalidad de Nuevo Chimbote';
   address = 'Centro Cívico S/N - Nuevo Chimbote Urb. José Carlos Mariátegui';
   horario = 'Lun - Vie: 08:00am - 04:00pm';
-  email = 'nchimbote@muni.gob.pe'; // Placeholder mostrados en pagina
+  email = 'nchimbote@muni.gob.pe'; // placeholder mostrados en pagina
 }

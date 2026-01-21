@@ -9,18 +9,23 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/preguntas-frecuentes.component';
 import { MapaSitioComponent } from './pages/mapa-sitio/mapa-sitio.component';
 import { PoliticaPrivacidadComponent } from './pages/politica-privacidad/politica-privacidad.component';
+import { LoginComponent } from './auth/login/login.component'; // Import the LoginComponent
+import { RegisterComponent } from './auth/register/register.component'; // Import the RegisterComponent
+import { authGuard } from './auth/auth.guard'; // Import the AuthGuard
 
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'tramites-licencias', component: TramitesLicenciasComponent },
-  { path: 'gestion-tributaria', component: GestionTributariaComponent },
-  { path: 'seguridad-ciudadana', component: SeguridadCiudadanaComponent },
-  { path: 'reporte-incidencias', component: ReporteIncidenciasComponent },
-  { path: 'consultas-proyectos', component: ConsultasProyectosComponent },
-  { path: 'usuarios', component: UsuariosComponent },
-  { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent },
-  { path: 'mapa-sitio', component: MapaSitioComponent },
-  { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },
+  { path: 'login', component: LoginComponent }, // Add the login route
+  { path: 'register', component: RegisterComponent }, // Add the register route
+  { path: 'tramites-licencias', component: TramitesLicenciasComponent, canActivate: [authGuard] }, // Protected route
+  { path: 'gestion-tributaria', component: GestionTributariaComponent, canActivate: [authGuard] }, // Protected route
+  { path: 'seguridad-ciudadana', component: SeguridadCiudadanaComponent, canActivate: [authGuard] }, // Protected route
+  { path: 'reporte-incidencias', component: ReporteIncidenciasComponent, canActivate: [authGuard] }, // Protected route
+  { path: 'consultas-proyectos', component: ConsultasProyectosComponent, canActivate: [authGuard] }, // Protected route
+  { path: 'usuarios', component: UsuariosComponent, canActivate: [authGuard] }, // Protected route
+  { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent }, // Not protected, public info
+  { path: 'mapa-sitio', component: MapaSitioComponent }, // Not protected, public info
+  { path: 'politica-privacidad', component: PoliticaPrivacidadComponent }, // Not protected, public info
   { path: '**', redirectTo: '' } // Redirect any unknown paths to home
 ];
