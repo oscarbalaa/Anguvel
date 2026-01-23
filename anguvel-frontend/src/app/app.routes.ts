@@ -10,14 +10,12 @@ import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/pregu
 import { MapaSitioComponent } from './pages/mapa-sitio/mapa-sitio.component';
 import { PoliticaPrivacidadComponent } from './pages/politica-privacidad/politica-privacidad.component';
 import { LoginComponent } from './auth/login/login.component'; // Import the LoginComponent
-import { RegisterComponent } from './auth/register/register.component'; // Import the RegisterComponent
 import { authGuard } from './auth/auth.guard'; // Import the AuthGuard
 
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent }, // Add the login route
-  { path: 'register', component: RegisterComponent }, // Add the register route
   { path: 'tramites-licencias', component: TramitesLicenciasComponent, canActivate: [authGuard] }, // Protected route
   { path: 'gestion-tributaria', component: GestionTributariaComponent, canActivate: [authGuard] }, // Protected route
   { path: 'seguridad-ciudadana', component: SeguridadCiudadanaComponent, canActivate: [authGuard] }, // Protected route

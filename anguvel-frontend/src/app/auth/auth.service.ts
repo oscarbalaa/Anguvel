@@ -43,19 +43,6 @@ export class AuthService {
     );
   }
 
-  register(userData: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/register`, userData).pipe(
-      tap(response => {
-        if (response && response.access_token) {
-          if (isPlatformBrowser(this.platformId)) {
-            localStorage.setItem('access_token', response.access_token);
-          }
-          this.isAuthenticatedSubject.next(true);
-        }
-      })
-    );
-  }
-
   logout(): void {
     if (isPlatformBrowser(this.platformId)) {
       // Optionally, you can call a backend logout endpoint here if needed

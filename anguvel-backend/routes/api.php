@@ -26,4 +26,4 @@ Route::apiResource('gestion_tributaria_pagos', GestionTributariaPagosController:
 Route::apiResource('reporte_incidencias', ReporteIncidenciasController::class);
 Route::apiResource('seguridad_ciudadana', SeguridadCiudadanaController::class);
 Route::apiResource('tramites_licencias', TramitesLicenciasController::class);
-Route::apiResource('usuarios', UsuarioController::class);
+Route::apiResource('usuarios', UsuarioController::class)->except(['store']);
