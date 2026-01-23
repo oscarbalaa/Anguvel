@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class LoginComponent {
   credentials = {
-    email: '',
+    nombre: '',
     password: ''
   };
   errorMessage: string | null = null;
@@ -26,7 +26,7 @@ export class LoginComponent {
         this.router.navigate(['/']); // Redirect to home or dashboard on successful login
       },
       error: (err) => {
-        this.errorMessage = err.error?.message || 'Login failed. Please check your credentials.';
+        this.errorMessage = err.error?.message || 'Fallo al iniciar por favor verifique sus datos.';
       }
     });
   }
