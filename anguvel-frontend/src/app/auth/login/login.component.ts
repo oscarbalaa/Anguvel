@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class LoginComponent {
   credentials = {
     nombre: '',
-    password: ''
+    contrasena: ''
   };
   errorMessage: string | null = null;
 

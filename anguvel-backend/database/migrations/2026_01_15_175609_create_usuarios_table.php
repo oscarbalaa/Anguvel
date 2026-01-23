@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id('id_usuario');
-            $table->string('dni')->unique();
-            $table->string('nombre');
-            $table->string('contrasena');
+            $table->string('dni', 255)->collate('utf8mb4_unicode_ci')->unique();
+            $table->string('nombre', 255)->collate('utf8mb4_unicode_ci');
+            $table->string('contrasena', 255)->collate('utf8mb4_unicode_ci');
         });
     }
 

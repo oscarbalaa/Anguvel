@@ -18,7 +18,6 @@ class Usuario extends Authenticatable // Extend Authenticatable
     protected $fillable = [
         'dni',
         'nombre',
-        'email', // Assuming you'll add an email column for login
         'contrasena',
     ];
 
