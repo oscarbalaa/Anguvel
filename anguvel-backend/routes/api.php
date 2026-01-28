@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Auth\Events\Login;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConsultaProyectoController;
@@ -27,3 +28,5 @@ Route::apiResource('reporte_incidencias', ReporteIncidenciasController::class);
 Route::apiResource('seguridad_ciudadana', SeguridadCiudadanaController::class);
 Route::apiResource('tramites_licencias', TramitesLicenciasController::class);
 Route::apiResource('usuarios', UsuarioController::class)->except(['store']);
+
+
